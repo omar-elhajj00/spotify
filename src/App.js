@@ -52,15 +52,18 @@ const App = () => {
 
     return(
         <div className="App">
-            <div>Hello React</div>
+            <header className="App-header">
+                {
+                    !token ?
+                    <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirectURI=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}> Login To SPOTIFY</a>
+                    :
+                    <button onClick={logout}>Logout</button> 
+                }
+                {/* A hash is passed to the URL which contains the access token which we need to authorize the API calls. */}
+            </header>
+
             
-            {
-                !token ?
-                <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirectURI=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}> Login To SPOTIFY</a>
-                :
-                <button onClick={logout}>Logout</button> 
-            }
-            {/* A hash is passed to the URL which contains the access token which we need to authorize the API calls. */}
+           
         </div>
     );
 }
