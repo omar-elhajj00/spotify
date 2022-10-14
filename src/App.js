@@ -8,7 +8,7 @@ const App = () => {
     //client id 
     const CLIENT_ID="5110eccd3dfa4e0c90db3e4eb7002a96";
     //redirect url
-    const REDIRECT_URI="http://localhost:3000";
+    const REDIRECT_URI = "http://localhost:8888/callback"
     // auth
     const AUTH_ENDPOINT="https://accounts.spotify.com/authorize";
     //response type
@@ -18,10 +18,6 @@ const App = () => {
     // A hash is passed to the URL which contains the access token which we need to authorize the API calls.
     // store the token in a state variable
     const [token , setToken]=useState("");
-
-
-
-
 
     // useEffect for token 
     useEffect(()=>{
@@ -39,7 +35,6 @@ const App = () => {
         setToken(token);
     },[])
 
-
     //logout 
     // remove the token from the local storage and seet the state empty
     const logout = () => {
@@ -47,8 +42,8 @@ const App = () => {
             window.localStorage.removeItem(token);
     }
 
-
     //fetching data using axios
+
 
     return(
         <div className="App">
@@ -59,7 +54,6 @@ const App = () => {
                     :
                     <button onClick={logout}>Logout</button> 
                 }
-                {/* A hash is passed to the URL which contains the access token which we need to authorize the API calls. */}
             </header>
 
             
