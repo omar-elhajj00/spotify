@@ -1,5 +1,6 @@
 import React , {useState ,useEffect} from "react";
 import './App.css'
+import Music from './components/Music'
 
 
 const App = () => {
@@ -8,7 +9,7 @@ const App = () => {
     //client id 
     const CLIENT_ID="5110eccd3dfa4e0c90db3e4eb7002a96";
     //redirect url
-    const REDIRECT_URI = "http://localhost:8888/callback"
+    const REDIRECT_URI = "http://localhost:3000/callback"
     // auth
     const AUTH_ENDPOINT="https://accounts.spotify.com/authorize";
     //response type
@@ -52,7 +53,7 @@ const App = () => {
                     !token ?
                     <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}> Login To SPOTIFY</a>
                     :
-                    <button onClick={logout}>Logout</button> 
+                    <Music />
                 }
             </header>
 
