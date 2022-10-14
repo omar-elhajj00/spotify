@@ -1,5 +1,5 @@
 import React , {useState ,useEffect} from "react";
-import './App.css'
+import './music.css'
 import Music from './components/Music'
 
 
@@ -47,11 +47,11 @@ const App = () => {
 
 
     return(
-        <div className="App">
+        <div className="app">
             <header className="App-header">
                 {
                     !token ?
-                    <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}> Login To SPOTIFY</a>
+                    <a className="login" href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}> Login To SPOTIFY</a>
                     :
                     <Music />
                 }
