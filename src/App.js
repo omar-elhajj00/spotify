@@ -1,4 +1,5 @@
 import React , {useState ,useEffect} from "react";
+import './App.css'
 
 
 const App = () => {
@@ -39,17 +40,26 @@ const App = () => {
     },[])
 
 
+    //logout 
+    // remove the token from the local storage and seet the state empty
+    const logout = () => {
+        setToken("");
+            window.localStorage.removeItem(token);
+    }
 
-    //const searchMusic= 
-    useEffect(()=> {
 
-    } , []);
+    //fetching data using axios
 
     return(
         <div className="App">
             <div>Hello React</div>
-             {/* create the link in the return of our App.js */}
-            <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirectURI=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}> Login To SPOTIFY</a>
+            
+            {
+                !token ?
+                <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirectURI=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}> Login To SPOTIFY</a>
+                :
+                <button onClick={logout}>Logout</button> 
+            }
             {/* A hash is passed to the URL which contains the access token which we need to authorize the API calls. */}
         </div>
     );
