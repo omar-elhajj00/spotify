@@ -5,11 +5,11 @@ import searchIcon from './search.svg';
 const Music = () => {
     return(
         <div className="app">
-            <h1>Spotify React </h1>
+            <h1>Spotify </h1>
             
             <div className="search">
                 <input
-                 placeholder="Search for movies"
+                 placeholder="Search for music"
                  value=""
                  onChange={(e)=>{}}
                 />
