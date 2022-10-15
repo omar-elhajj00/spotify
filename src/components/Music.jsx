@@ -40,7 +40,7 @@ const Music = () => {
             <div className="search">
                 <input
                  placeholder="Search for music"
-                 value=""
+                 value={searchKey}
                  onChange={(e)=>{setSearchKey(e.target.value)}}
                 />
                 <img 
