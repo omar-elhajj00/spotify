@@ -41,7 +41,7 @@ const Music = () => {
                 <input
                  placeholder="Search for music"
                  value=""
-                 onChange={(e)=>{}}
+                 onChange={(e)=>{setSearchKey(e.target.value)}}
                 />
                 <img 
                  src={searchIcon}
