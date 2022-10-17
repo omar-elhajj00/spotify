@@ -1,4 +1,4 @@
-import React , {useEffect , useState} from "react";
+import React , {useState} from "react";
 import '../music.css';
 import searchIcon from './search.svg';
 import axios from 'axios';
@@ -46,7 +46,11 @@ const Music = () => {
         debugger
         setArtists(data.data.artists.items);
         
+
 }
+    // useEffect(()=> {
+    //     searchArtists("");
+    // },[]);
    
 
     return(

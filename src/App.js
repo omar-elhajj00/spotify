@@ -38,10 +38,10 @@ const App = () => {
 
     //logout 
     // remove the token from the local storage and seet the state empty
-    const logout = () => {
-        setToken("");
-            window.localStorage.removeItem(token);
-    }
+    // const logout = () => {
+    //     setToken("");
+    //         window.localStorage.removeItem(token);
+    // }
 
     //fetching data using axios
 

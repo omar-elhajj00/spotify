@@ -7,8 +7,8 @@ const ArtistCard = ({artist}) => {
             <div>
                 <p>{artist.followers}</p>
             </div>
-            <div>
-                <img src={artist.image[0]} alt="" />
+            <div  key={artist.id}>
+                {/* <img src={artist.images[0].url} alt="" /> */}
             </div>
             <div>
                 <span>{artist.name}</span>
