@@ -11,7 +11,7 @@ const Music = () => {
     const [searchKey, setSearchKey] = useState("");
 
     //artist state
-    const [artists, setArtists] =useState();
+    const [artists, setArtists] =useState([]);
     const token=window.localStorage.getItem("token");
     // console.log("tokens are" ,token);
 
@@ -31,17 +31,20 @@ const Music = () => {
         // .then(res => {
         //     const data = res.data;
         //     console.log(data);
-        //     debugger
+           
             
         //   })
-        // .catch(err => {
-        //     if(err.response){
-        //         console.log(err.response.data);
-        //         console.log(err.response.status);
-        //         console.log(err.response.headers);
-        //     }
-        // })
-        setArtists(data.artists.items)
+        .catch(err => {
+            if(err.response){
+                console.log(err.response.data);
+                console.log(err.response.status);
+                console.log(err.response.headers);
+            }
+        });
+        console.log(data);
+        debugger
+        setArtists(data.data.artists.items);
+        
 }
    
 
