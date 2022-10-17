@@ -11,40 +11,37 @@ const Music = () => {
     const [searchKey, setSearchKey] = useState("");
 
     //artist state
-    const [artists, setArtists] =useState([]);
+    const [artists, setArtists] =useState();
     const token=window.localStorage.getItem("token");
     // console.log("tokens are" ,token);
 
     //api
     const searchArtists = async (e) => {
         e.preventDefault();
-        const {data} = await axios.get("https://api.spotify.com/v1/search",{
+        const data = await axios.get("https://api.spotify.com/v1/search",{
         headers: {
             Authorization: `Bearer ${token}`
         },
         params: {
-            q: "maya",
+            q: searchKey,
             type:"artist"
-        },
-        
         }
-        
-        ).then(res => {
-            const data = res.data;
-            console.log(data);
-          })
-        .catch(err => {
-            if(err.response){
-                console.log(err.response.data);
-                console.log(err.response.status);
-                console.log(err.response.headers);
-            }
-        })
-
-        setArtists(data.artists.items);
-        console.log(artists);
-
-    
+        }
+        )
+        // .then(res => {
+        //     const data = res.data;
+        //     console.log(data);
+        //     debugger
+            
+        //   })
+        // .catch(err => {
+        //     if(err.response){
+        //         console.log(err.response.data);
+        //         console.log(err.response.status);
+        //         console.log(err.response.headers);
+        //     }
+        // })
+        setArtists(data.artists.items)
 }
    
 
@@ -61,7 +58,7 @@ const Music = () => {
                 <img 
                  src={searchIcon}
                  alt="search"
-                 onClick={() =>searchArtists}
+                 onClick={searchArtists}
                  />
             </div>
 
