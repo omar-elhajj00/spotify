@@ -1,4 +1,5 @@
-import React , {useState} from "react";
+import React , {useState,useEffect} from "react";
+import ReactDom from "react-dom";
 import '../music.css';
 import searchIcon from './search.svg';
 import axios from 'axios';
@@ -46,12 +47,14 @@ const Music = () => {
         debugger
         setArtists(data.data.artists.items);
         
+        
 
 }
-    // useEffect(()=> {
-    //     searchArtists("");
-    // },[]);
-   
+    // useEffect(()=>    {
+    //     artists=JSON.parse(artists);
+    // },[artists]);
+    
+    
 
     return(
         <div className="app">
@@ -76,10 +79,15 @@ const Music = () => {
                     <div className="container">
                         {
                         artists.map((artist) =>
-                        <ArtistCard artist={artist} />)
+                        <ArtistCard artist={artist} />
+                        )
                         }
+                        hello {artists.length}
+
+                      
                     </div>
                 )
+                
                 :
                 (
                     <div className='empty'> 
