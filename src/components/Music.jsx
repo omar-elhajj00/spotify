@@ -6,7 +6,6 @@ import ArtistCard from './ArtistCard';
 
 
 const Music = () => {
-
     // fetching data
     // seacrh state 
     const [searchKey, setSearchKey] = useState("");
@@ -15,7 +14,7 @@ const Music = () => {
     const [artists, setArtists] =useState([]);
     const token=window.localStorage.getItem("token");
 
-    //api
+    //axios api
     const searchArtists = async (e) => {
         e.preventDefault();
         const data = await axios.get("https://api.spotify.com/v1/search",{
@@ -26,8 +25,7 @@ const Music = () => {
             q: searchKey,
             type:"artist"
         }
-        }
-        )
+        })
         .catch(err => {
             if(err.response){
                 console.log(err.response.data);
@@ -42,11 +40,6 @@ const Music = () => {
         
 
 }
-    // useEffect(()=>    {
-    //     artists=JSON.parse(artists);
-    // },[artists]);
-    
-    
 
     return(
         <div className="app">
@@ -72,40 +65,16 @@ const Music = () => {
                         {
                         artists.map((artist) =>
                         <ArtistCard artist={artist} />
-                        )
-                        }
-                        
-
-                      
+                        )}  
                     </div>
                 )
-                
-                :
-                (
+                :(
                     <div className='empty'> 
                         <h2>No artists found</h2>
                     </div>
-                )
-                }
-
+                )}
             </div>
              )
-            
-            {/* {
-                artists?.length>0
-                ? (
-                    <div className="container">
-                        {movies.map((movie)=> 
-                        <MovieCard movie={movie}/>
-                        )}
-                    </div>
-                ) : 
-                (
-                    <div className='empty'> 
-                        <h2>No movies found</h2>
-                    </div>
-                )
-            } */}
 }
 
 export default Music
