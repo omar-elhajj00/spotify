@@ -32,7 +32,7 @@ const Music = () => {
         // .then(res => {
         //     const data = res.data;
         //     console.log(data);
-           
+        //     debugger
             
         //   })
         .catch(err => {
@@ -65,10 +65,28 @@ const Music = () => {
                  onClick={searchArtists}
                  />
             </div>
-            <div className="container">
-                {artists.map((artist) =>
-                <ArtistCard artist={artist} />)}
+            
+                {
+                artists.length > 0 
+                ? (
+                    <div className="container">
+                        {
+                        artists.map((artist) =>
+                        <ArtistCard artist={artist} />)
+                        }
+                    </div>
+                )
+                :
+                (
+                    <div className='empty'> 
+                        <h2>No artists found</h2>
+                    </div>
+                )
+                }
+
             </div>
+             )
+            
             {/* {
                 artists?.length>0
                 ? (
@@ -84,10 +102,6 @@ const Music = () => {
                     </div>
                 )
             } */}
-            
-
-        </div>
-    );
 }
 
 export default Music
