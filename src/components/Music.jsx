@@ -1,5 +1,4 @@
-import React , {useState,useEffect} from "react";
-import ReactDom from "react-dom";
+import React , {useState} from "react";
 import '../music.css';
 import searchIcon from './search.svg';
 import axios from 'axios';
@@ -15,7 +14,6 @@ const Music = () => {
     //artist state
     const [artists, setArtists] =useState([]);
     const token=window.localStorage.getItem("token");
-    // console.log("tokens are" ,token);
 
     //api
     const searchArtists = async (e) => {
@@ -30,12 +28,6 @@ const Music = () => {
         }
         }
         )
-        // .then(res => {
-        //     const data = res.data;
-        //     console.log(data);
-        //     debugger
-            
-        //   })
         .catch(err => {
             if(err.response){
                 console.log(err.response.data);
@@ -82,7 +74,7 @@ const Music = () => {
                         <ArtistCard artist={artist} />
                         )
                         }
-                        hello {artists.length}
+                        
 
                       
                     </div>
