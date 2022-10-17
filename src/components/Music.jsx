@@ -2,6 +2,7 @@ import React , {useEffect , useState} from "react";
 import '../music.css';
 import searchIcon from './search.svg';
 import axios from 'axios';
+import ArtistCard from './ArtistCard';
 
 
 const Music = () => {
@@ -64,9 +65,12 @@ const Music = () => {
                  onClick={searchArtists}
                  />
             </div>
-
+            <div className="container">
+                {artists.map((artist) =>
+                <ArtistCard artist={artist} />)}
+            </div>
             {/* {
-                movies?.length>0
+                artists?.length>0
                 ? (
                     <div className="container">
                         {movies.map((movie)=> 
