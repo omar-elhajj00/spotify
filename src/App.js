@@ -36,16 +36,7 @@ const App = () => {
         setToken(token);
     },[])
 
-    //logout 
-    // remove the token from the local storage and seet the state empty
-    // const logout = () => {
-    //     setToken("");
-    //         window.localStorage.removeItem(token);
-    // }
-
     //fetching data using axios
-
-
     return(
         <div className="app">
             <header className="App-header">
@@ -56,9 +47,6 @@ const App = () => {
                     <Music />
                 }
             </header>
-
-            
-           
         </div>
     );
 }
