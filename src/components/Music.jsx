@@ -13,7 +13,7 @@ const Music = () => {
     //artist state
     const [artists, setArtists] =useState([]);
     const token=window.localStorage.getItem("token");
-    console.log("tokens are" ,token);
+    // console.log("tokens are" ,token);
 
     //api
     const searchArtists = async (e) => {
@@ -23,12 +23,27 @@ const Music = () => {
             Authorization: `Bearer ${token}`
         },
         params: {
-            q: searchKey,
+            q: "maya",
             type:"artist"
-        }}
+        },
         
-        )
-        console.log(data);
+        }
+        
+        ).then(res => {
+            const data = res.data;
+            console.log(data);
+          })
+        .catch(err => {
+            if(err.response){
+                console.log(err.response.data);
+                console.log(err.response.status);
+                console.log(err.response.headers);
+            }
+        })
+
+        setArtists(data.artists.items);
+        console.log(artists);
+
     
 }
    
@@ -46,7 +61,7 @@ const Music = () => {
                 <img 
                  src={searchIcon}
                  alt="search"
-                 onClick={() =>{}}
+                 onClick={() =>searchArtists}
                  />
             </div>
 
