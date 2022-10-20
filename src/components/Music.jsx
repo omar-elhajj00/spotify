@@ -34,7 +34,7 @@ const Music = () => {
             }
         });
         console.log(data);
-        debugger
+        
         setArtists(data.data.artists.items);
         
         
