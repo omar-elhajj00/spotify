@@ -3,19 +3,17 @@ import '../music.css';
 
 const ArtistCard = ({artist}) => {
     return(
-        <div className="music">
-            <div>
-                <p>{artist.followers}</p>
-            </div>
-            <div  key={artist.id}>
-                {/* <img src={artist.images[0].url} alt="" /> */}
-            </div>
+        <div className="music">                        
             <div>
                 <span>{artist.name}</span>
-                <h3>{artist.popularity}</h3>
             </div>
-
-
+            <div  key={artist.id}>
+                {artist.images.length ? <img src={artist.images[0].url} alt=""/> : <div>No Image</div>}
+            </div>
+            <div>
+                <span>Popularity: {artist.popularity}</span>
+                <h3>Followers :{artist.followers.total}</h3>
+            </div>
         </div>
     )
 }
