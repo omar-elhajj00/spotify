@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+#spotify
+Spotify App is a react-based app where the user can search for specific artists and get the result bu using spitify web api.  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img
+  src="/spotify.png"
+  alt="spotify app"
+  style="display: inline-block; margin: 0 auto; max-width: 100px">
 
 ## Available Scripts
 
