@@ -10,15 +10,15 @@ Spotify App is a react-based app where the user can search for specific artists 
 
 node v16.17.1
 
-### Install
+## Install
 
 npm install
 
-### Usage
+## Usage
 
 npm start
 
-### Note
+## Note
 
 If you faced any problem running the app you can change the scritsnside package.json to 
 "scripts": {
