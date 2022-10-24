@@ -1,6 +1,10 @@
 # Spotify
 Spotify App is a react-based app where the user can search for specific artists and get the result bu using spitify web api.  
 
+<img
+  src="/spotify.png"
+  alt="spotify app"
+  style="display: inline-block; margin: 0 auto; max-width: 100px">
 
 ## Prerequisite
 
